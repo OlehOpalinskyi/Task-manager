@@ -1,0 +1,163 @@
+body {
+  font: 14px Arial, "Lucida Grande", Helvetica, sans-serif;
+  background-color: #1b6d85 !important;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+#logo {
+    color: white !important;
+    font-size: 25pt;
+}
+#welcom {
+  /*margin-top:51px;*/
+  margin:auto 0;
+  text-align: center;
+  /*height: 610px;*/
+  font-size:15pt;
+  padding-top: 18%;
+  color:white;
+}
+#welcom .title {
+  text-transform: uppercase;
+  font-size:35pt;
+  color:lightcoral;
+}
+.modal-content {
+  text-align: center;
+}
+.modal-body input {
+  border-radius: 10px;
+  width: 65%;
+  height: 41px;
+  padding-left: 10px;
+  border: 1px solid;
+  outline: none;
+}
+.modal-body button {
+  width: 65%;
+}
+#navbar form {
+  display: none;
+}
+#menu {
+  display: none;
+  float: right;
+  padding-top: 7px;
+}
+#task {
+  margin:7% auto;
+}
+#task form {
+  width: 500px;
+  margin: auto;
+  border: 2px solid white;
+  padding: 35px;
+    color: white;
+  border-radius: 15px;
+}
+#task form button {
+  width:100%;
+  height: 45px;
+}
+#task form p {
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+#task form select {
+    color: #000;
+}
+#task form p:last-child {
+  text-align: center;
+}
+#task form input, select {
+  float: right;
+  width: 200px;
+  padding-left: 10px;
+  border-radius: 10px;
+    color: black;
+  height: 30px;
+  outline: none;
+  border: none;
+}
+.tasks {
+  margin-top: 65px;
+}
+.task div {
+  display: inline-block;
+}
+ .task {
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top:15px;
+  background-color: ghostwhite;
+}
+ .name {
+   width:13%;
+     /*text-transform: capitalize;*/
+ }
+ .dateOfStart, .dateOfEnd {
+   width: 13%;
+ }
+ .status, .priority {
+   width:11%
+ }
+ .nav {
+   width: 18%;
+ }
+ .circle {
+     padding: 0 6px;
+     border-radius: 50%;
+     margin-right: 5px;
+ }
+ .Hight {
+     background-color: red;
+     box-shadow: 0 1px 10px 3px darkred;
+ }
+ .Middle {
+     background-color: orange;
+     box-shadow: 0 1px 10px 3px darkorange;
+ }
+ .Low {
+     background-color: green;
+     box-shadow: 0 1px 10px 3px darkgreen;
+ }
+#share .modal-body select {
+    width: 52%;
+    margin-bottom: 10px;
+    float: none;
+    border: 1px solid #337ab7;
+}
+#shared {
+    margin-top: 50px;
+}
+#SharedTasks .owner {
+    width: 12%;
+}
+@media only screen and (max-width: 768px) {
+    #menu {
+        float: none;
+    }
+    #menu button {
+        display: block;
+        width: 100%;
+        background-color: inherit;
+        border-color: darkgrey;
+        margin-bottom: 5px;
+    }
+    #menu button:hover {
+        border-color: white;
+    }
+    #welcom {
+        margin-top: 60px;
+    }
+    #task {
+        margin: 11% auto;
+    }
+    #task form {
+        border:none;
+    }
+}

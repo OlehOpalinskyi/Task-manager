@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task Manager</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+  </head>
+  <body>
+  <% include /head.ejs%>
+
+  <section id="welcom">
+      <p class="title">welcom to the task manager</p>
+      <p>It's a simple saite for controls yours task. For start you need sign in or registration.</p>
+    </section>
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Registration</h4>
+          </div>
+          <div class="modal-body">
+            <form action="reg" method="post">
+              <p><input type="text" placeholder="User name" name="username"></p>
+              <p><input type="email" placeholder="Email" name="email"></p>
+              <p><input type="password" placeholder="Password" name="password"></p>
+              <p><button type="submit" class="btn btn-success">Submit</button></p>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+  </body>
+</html>

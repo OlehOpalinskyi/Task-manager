@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task Manager</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+</head>
+<body>
+
+<% include /head.ejs%>
+
+<div id="task">
+    <form action="/share/update/<%= task.name %>/<%= task.email %>" method="post">
+        <p>Name: <input type="text" name="name" readonly value="<%= task.name %>"></p>
+        <p>Data of start: <input type="date" name="dateStart" required value="<%= task.dateStart %>"></p>
+        <p>Data of end: <input type="date" name="dateEnd" required value="<%= task.dateEnd %>"></p>
+        <p>Status: <select name="status" id="status" required>
+            <option value="Plans">Plans</option>
+            <option value="In process">In process</option>
+            <option value="Done">Done</option>
+        </select></p>
+        <p>Priority: <select name="priority" id="Priority" required>
+            <option value="Hight">Hight</option>
+            <option value="Middle">Middle</option>
+            <option value="Low">Low</option>
+        </select></p>
+        <p>
+            <button type="submit" id="update" class="btn btn-primary">Update</button>
+        </p>
+    </form>
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/main.js"></script>
+</body>
+</html>

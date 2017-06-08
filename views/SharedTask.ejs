@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task Manager</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+</head>
+<body>
+<% include /head.ejs%>
+
+<% if(shared.length == 0){%>
+<section id="welcom">
+    <p class="title">You don't have joint projects.</p>
+</section>
+<%} else {%>
+<div id="SharedTasks">
+    <div class="container">
+        <div class="tasks">
+            <% for(var i=0; i < shared.length; i++) {%>
+            <div class="task">
+                <div class="name"> <%=shared[i].task.name %> </div>
+                <div class="dateOfStart"> <%= shared[i].task.dateStart %> </div>
+                <div class="dateOfEnd"> <%= shared[i].task.dateEnd %> </div>
+                <div class="status"> <%= shared[i].task.status %> </div>
+                <div class="priority"><span class="circle <%= shared[i].task.priority %>"></span> <%= shared[i].task.priority %> </div>
+                <div class="owner"><%=shared[i].user%></div>
+                <div class="nav">
+                    <a href="/share/update/<%= shared[i].task.name %>/<%= shared[i].email %>"><button type="button" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
+                    <button type="button" class="btn btn-danger ShareDel"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</div>
+
+<%}%>
+
+<div id="share" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Share</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Select email: <select name="selectEmail" id="selectEmail"></select>
+                </p>
+                <button type="button" id="shareBtn" class="btn btn-primary">Share</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/main.js"></script>
+</body>
+</html>
