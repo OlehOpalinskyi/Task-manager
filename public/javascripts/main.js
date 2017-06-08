@@ -99,7 +99,7 @@ $(function () {
         switch (status) {
             case 'Plans': {
                 if(start < currnet) {
-                    alert('If status: [Plans] date of start can not be bigger then current date');
+                    alert('If status: [Plans] date of start can not be less then current date');
                     e.preventDefault();
                 }
                 break;

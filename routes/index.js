@@ -211,7 +211,7 @@ router.post('/share', function (req, res) {
         console.log(share);
         mongo.connect(url, function(err, db) {
             assert.equal(null, err);
-            db.collection('users').updateOne({email: recipient}, {$push: {shared: share}}, function (err, doc) {
+            db.collection('users').updateOne({email: recipient.slice(0, -1)}, {$push: {shared: share}}, function (err, doc) {
                 assert.equal(null, err);
                 console.log('added');
 
